@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Escape Room Digital - El Laboratorio de IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Fondo negro para máximo contraste */
+        }
+        .card {
+            background-color: #1E1B1B; /* Un gris muy oscuro para las tarjetas */
+            border: 1px solid #8B5CF6; /* Borde morado por defecto */
+        }
+        .phase-connector {
+            width: 2px;
+            height: 50px;
+            background-color: #8B5CF6; /* Conector morado */
+        }
+        @media (min-width: 768px) {
+            .phase-connector {
+                width: 50px;
+                height: 2px;
+            }
+        }
+        .chart-container {
+            position: relative;
+            height: 250px;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+        .prompt-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #F97316; /* Borde izquierdo naranja */
+        }
+        .button-link {
+            display: block;
+            transition: transform 0.2s;
+        }
+        .button-link:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 text-purple-500">El Laboratorio Secreto de IA</h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Una infografía del viaje para convertirse en un <span class="font-bold text-orange-500">AI Marketing Orchestrator</span>, desbloqueando el poder del Customer Journey.</p>
+        </header>
+
+        <main>
+            <section id="journey-intro" class="text-center mb-20">
+                 <h2 class="text-3xl font-bold mb-6">El Desafío del Orquestador IA</h2>
+                 <p class="text-gray-400 max-w-2xl mx-auto mb-8">El objetivo es dominar 7 agentes de IA, cada uno guardando una pieza del puzzle del marketing. Solo orquestando todos se puede alcanzar la maestría.</p>
+                 <div class="flex justify-center items-center space-x-4">
+                    <div class="text-7xl font-black text-orange-500">7</div>
+                    <div class="text-2xl font-bold text-left">Agentes de IA<br>a Dominar</div>
+                 </div>
+            </section>
+
+            <section id="flow-chart" class="mb-20">
+                <h2 class="text-3xl font-bold text-center mb-12">Flujo del Escape Room: El Customer Journey</h2>
+                <div class="flex flex-col md:flex-row items-center justify-center flex-wrap gap-4">
+
+                    <div id="phase-0" class="card rounded-lg p-6 w-full max-w-sm text-center">
+                        <div class="text-2xl font-bold mb-2 text-purple-500">Preparación</div>
+                        <p class="text-sm text-gray-300 mb-4">Activando los Agentes: <br>Claude & Perplexity</p>
+                        <div class="prompt-box p-3 text-left rounded-md">
+                            <p class="text-xs text-gray-400 mb-1">Instrucción Clave:</p>
+                            <p class="text-sm font-medium">Crea la carpeta 'mi-escape-room' y el archivo 'insights-cliente.txt' para Claude MCP.</p>
+                        </div>
+                    </div>
+
+                    <div class="phase-connector"></div>
+
+                    <div id="phase-1" class="card rounded-lg p-6 w-full max-w-sm text-center">
+                        <div class="text-2xl font-bold mb-2 text-purple-500">Fase 1: Awareness</div>
+                        <p class="text-sm text-gray-300 mb-4">Producto: Carousel de Instagram sobre los problemas del cliente.</p>
+                        <div class="prompt-box p-3 text-left rounded-md">
+                            <p class="text-xs text-gray-400 mb-1">Prompt para Perplexity:</p>
+                            <p class="text-sm font-medium">"¿Cuáles son los 3 problemas más recurrentes que mi cliente ideal enfrenta en [tu nicho]?"</p>
+                        </div>
+                    </div>
+
+                    <div class="phase-connector"></div>
+
+                    <div id="phase-2" class="card rounded-lg p-6 w-full max-w-sm text-center">
+                        <div class="text-2xl font-bold mb-2 text-purple-500">Fase 2: Consideration</div>
+                        <p class="text-sm text-gray-300 mb-4">Producto: Infografía de análisis competitivo.</p>
+                        <div class="prompt-box p-3 text-left rounded-md">
+                            <p class="text-xs text-gray-400 mb-1">Prompt para Gemini (Gem 'Analista Competitivo'):</p>
+                            <p class="text-sm font-medium">"Analiza a [Competidor 1] y [Competidor 2]. Sugiere 2 ventajas para mi [producto/servicio]."</p>
+                        </div>
+                    </div>
+
+                    <div class="phase-connector"></div>
+
+                    <div id="phase-3" class="card rounded-lg p-6 w-full max-w-sm text-center">
+                        <div class="text-2xl font-bold mb-2 text-purple-500">Fase 3: Decision</div>
+                        <p class="text-sm text-gray-300 mb-4">Producto: Diseño de Propuesta de Valor.</p>
+                        <div class="prompt-box p-3 text-left rounded-md">
+                            <p class="text-xs text-gray-400 mb-1">Prompt para Grok (basado en Claude):</p>
+                            <p class="text-sm font-medium">"Genera 3 propuestas de valor disruptivas para [tu producto/servicio] con una promesa única."</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="flex flex-col md:flex-row items-center justify-center flex-wrap gap-4 mt-4">
+                    <div id="phase-4" class="card rounded-lg p-6 w-full max-w-sm text-center">
+                        <div class="text-2xl font-bold mb-2 text-purple-500">Fase 4: Purchase</div>
+                        <p class="text-sm text-gray-300 mb-4">Producto: Carousel de manejo de objeciones.</p>
+                        <div class="prompt-box p-3 text-left rounded-md">
+                            <p class="text-xs text-gray-400 mb-1">Prompt para DeepSeek/NotebookLM:</p>
+                            <p class="text-sm font-medium">"Simula objeción 'es caro'. ¿Cómo respondo con un script de cierre emocional consultando beneficios de NotebookLM?"</p>
+                        </div>
+                    </div>
+
+                    <div class="phase-connector"></div>
+
+                    <div id="phase-5" class="card rounded-lg p-6 w-full max-w-sm text-center">
+                        <div class="text-2xl font-bold mb-2 text-purple-500">Fase 5: Retention</div>
+                        <p class="text-sm text-gray-300 mb-4">Producto: Infografía de mapa de fidelización.</p>
+                        <div class="prompt-box p-3 text-left rounded-md">
+                            <p class="text-xs text-gray-400 mb-1">Prompt para Gemini Advanced:</p>
+                            <p class="text-sm font-medium">"Diseña 3 ideas de sorpresas personalizadas para clientes que han comprado [tu producto/servicio] hace 3 meses."</p>
+                        </div>
+                    </div>
+
+                    <div class="phase-connector"></div>
+
+                    <div id="phase-6" class="card rounded-lg p-6 w-full max-w-sm text-center">
+                        <div class="text-2xl font-bold mb-2 text-purple-500">Fase 6: Advocacy</div>
+                        <p class="text-sm text-gray-300 mb-4">Producto: PDF con guía de testimonios.</p>
+                        <div class="prompt-box p-3 text-left rounded-md">
+                            <p class="text-xs text-gray-400 mb-1">Prompt para AI Studio:</p>
+                            <p class="text-sm font-medium">"Genera prompts para una campaña de referidos en Instagram que incentive compartir experiencia a cambio de [recompensa]."</p>
+                        </div>
+                    </div>
+                     <div class="phase-connector"></div>
+                     <div id="phase-7" class="card rounded-lg p-6 w-full max-w-sm text-center border-2 border-orange-500">
+                        <div class="text-2xl font-bold mb-2 text-orange-500">Fase 7: Mastery</div>
+                        <p class="text-sm text-gray-300 mb-4">Producto Final: Ecosistema de contenido completo.</p>
+                        <div class="prompt-box p-3 text-left rounded-md">
+                            <p class="text-xs text-gray-400 mb-1">Prompt para Orquestación (varios agentes):</p>
+                            <p class="text-sm font-medium">"Crea una estrategia de contenido multiplataforma (IG, LinkedIn, Podcast) para 30 días sobre [tu tema central], con imágenes y audio."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="kpis" class="mb-20">
+                <h2 class="text-3xl font-bold text-center mb-12">Métricas y Resultados Clave</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="card rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center">Tasa de Completación por Fase</h3>
+                        <div class="chart-container">
+                            <canvas id="completionRateChart"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-4 text-center">Muestra el porcentaje de usuarios que avanzan a través de cada etapa del desafío.</p>
+                    </div>
+
+                    <div class="card rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center">Engagement en Redes Sociales</h3>
+                        <div class="chart-container">
+                            <canvas id="socialEngagementChart"></canvas>
+                        </div>
+                         <p class="text-sm text-gray-400 mt-4 text-center">Visualiza el impacto del contenido generado por la IA en diferentes plataformas.</p>
+                    </div>
+
+                    <div class="card rounded-lg p-6 md:col-span-2 lg:col-span-1">
+                        <h3 class="text-xl font-bold mb-4 text-center">Resultados de Negocio</h3>
+                        <div class="chart-container">
+                            <canvas id="businessResultsChart"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-4 text-center">Impacto directo medido en conversiones y Net Promoter Score (NPS) post-experiencia.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="arsenal">
+                <h2 class="text-3xl font-bold text-center mb-12">El Arsenal del Orquestador de IA</h2>
+                <p class="text-center text-gray-300 max-w-2xl mx-auto mb-10">Al completar las 7 fases, el usuario no solo escapa con conocimiento, sino con un kit completo de activos de marketing listos para implementar.</p>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full">🚀 <span class="ml-3">Artículo de Blog: "Mi Customer Journey potenciado por IA"</span></div></a>
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full">🚀 <span class="ml-3">Carousel de Instagram (7 slides)</span></div></a>
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full">🚀 <span class="ml-3">Infografía del Embudo de Ventas Personalizado</span></div></a>
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full">🚀 <span class="ml-3">20+ Frases para Redes Sociales</span></div></a>
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full">🚀 <span class="ml-3">Diseño de Propuesta de Valor</span></div></a>
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full">🚀 <span class="ml-3">Plan de Acción de 90 días</span></div></a>
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full">🚀 <span class="ml-3">Podcast Personal (Guion y Audio)</span></div></a>
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full">🚀 <span class="ml-3">Dashboard de Métricas y KPIs</span></div></a>
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full">🚀 <span class="ml-3">Biblioteca de Prompts Optimizados</span></div></a>
+                    <a href="https://innquietus.com/" target="_blank" class="button-link"><div class="card rounded-lg p-4 flex items-center h-full border-orange-500">🏆 <span class="ml-3 font-bold text-orange-500">Certificado: "AI Marketing Orchestrator"</span></div></a>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-20 pt-8 border-t border-gray-700">
+            <p class="text-gray-500">Infografía generada a partir de la plantilla "Escape Room Digital: El Laboratorio de IA".</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- COLORES PARA GRÁFICAS ---
+        const morado = '#8B5CF6';
+        const naranja = '#F97316';
+        const moradoClaro = '#A78BFA';
+        const naranjaClaro = '#FB923C';
+        const grisGrafica = 'rgba(255, 255, 255, 0.1)';
+        const colorTexto = 'white';
+
+        const chartTooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    labels: {
+                        color: colorTexto
+                    }
+                }
+            }
+        };
+
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const completionRateChartCtx = document.getElementById('completionRateChart').getContext('2d');
+        new Chart(completionRateChartCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Fase 1', 'Fase 2', 'Fase 3', 'Fase 4', 'Fase 5', 'Fase 6', 'Fase 7'],
+                datasets: [{
+                    label: 'Tasa de Completación',
+                    data: [95, 90, 85, 78, 70, 65, 60],
+                    backgroundColor: [morado, moradoClaro, '#C4B5FD', naranja, naranjaClaro, '#FDBA74', '#FED7AA'],
+                    borderColor: '#000000',
+                    borderWidth: 3,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...chartTooltipCallback,
+                plugins: {
+                    ...chartTooltipCallback.plugins,
+                    title: { display: false }
+                }
+            }
+        });
+
+        const socialEngagementChartCtx = document.getElementById('socialEngagementChart').getContext('2d');
+        new Chart(socialEngagementChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Instagram Stories', 'LinkedIn Posts', 'TikTok Videos', 'Blog Articles'].map(wrapLabel),
+                datasets: [{
+                    label: 'Aumento de Engagement (%)',
+                    data: [55, 45, 65, 30],
+                    backgroundColor: naranja,
+                    borderColor: naranjaClaro,
+                    borderWidth: 1,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...chartTooltipCallback,
+                 scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: colorTexto },
+                        grid: { color: grisGrafica }
+                    },
+                    x: {
+                        ticks: { color: colorTexto },
+                        grid: { color: grisGrafica }
+                    }
+                }
+            }
+        });
+
+        const businessResultsChartCtx = document.getElementById('businessResultsChart').getContext('2d');
+        new Chart(businessResultsChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Aumento de Conversiones', 'Puntuación NPS (de 10)'],
+                datasets: [{
+                    label: 'Resultados',
+                    data: [25, 8.5],
+                    backgroundColor: [morado, naranja],
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                 ...chartTooltipCallback,
+                 scales: {
+                    y: {
+                        ticks: { color: colorTexto },
+                        grid: { color: grisGrafica }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        max: 30,
+                        ticks: { color: colorTexto },
+                        grid: { color: grisGrafica }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
